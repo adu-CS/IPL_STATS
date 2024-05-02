@@ -5,6 +5,7 @@ List All Players
 {% block content %}
         <table border="1px">
             <thead>
+                <td><strong>Player ID</strong></td>
                 <td><strong>Name</strong></td>
                 <td><strong>Runs</strong></td>
                 <td><strong>Average</strong></td>
@@ -16,6 +17,7 @@ List All Players
 
             {% for row in rows %}
             <tr>
+                <td>{{ row["ply_id"] }}</td>
                 <td>{{ row["name"] }}</td>
                 <td>{{ row["runs"] }}</td>
                 <td>{{ row["avg"] }}</td>

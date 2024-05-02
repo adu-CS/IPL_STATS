@@ -7,7 +7,9 @@ Tournaments
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}"/>
         <ul>
             
-            <h1><a href="/tournament1">Tournament 1</a></h1>
-            <h1><a href="/tournament2">Tournament 2</a></h1>
+            {% for tournament in tournament_name %}
+            <h1><a href="{{ url_for('tournament_details', tournament_id=tournament[0]) }}">{{ tournament[1] }}</a></h1>
+            {% endfor %}
         </ul>
+        
 {% endblock %}

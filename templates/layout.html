@@ -9,13 +9,15 @@
     <body>
         <div class="navbar">
             <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-            <a href="{{ url_for('tnmt')}}" class="navbar-item">Tournaments</a>
+            <a href="{{ url_for('tnmt')}}" class="navbar-item">Tournaments Available</a>
             <a href="{{ url_for('crt_tnmt')}}" class="navbar-item">Create Tournament</a>
         </div>
 
 
         <div class="body-content">
             {% block content %}
+
+
             {% endblock %}
             <hr/>
             <footer>

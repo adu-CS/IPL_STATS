@@ -19,10 +19,18 @@ def Teams():
 
 @app.route("/tnmt")
 def tnmt():
-    return render_template("tnmt.html")
+    conn = sqlite3.connect('database.sqlite')
+    cursor = conn.cursor()
 
-@app.route("/tournament1")
-def tournament1():
+    # Fetch the tournament name from the database
+    cursor.execute("SELECT tournament_id, tournament_name FROM Tournaments")
+    tournament_name = cursor.fetchall()
+
+    conn.close()
+    return render_template("tnmt.html", tournament_name=tournament_name)
+
+@app.route("/tournament_details")
+def tournament_details():
     return render_template("all_tourney.html")
 
 #create tournament
@@ -69,6 +77,7 @@ def newrectnmt():
 def addrec():
     if request.method == 'POST':
         try:
+            ply_id=request.form['ply_id']
             name = request.form['name']
             runs = request.form['runs']
             avg = request.form['avg']
@@ -77,7 +86,7 @@ def addrec():
 
             with sqlite3.connect('database.sqlite') as con:
                 cur = con.cursor()
-                cur.execute("INSERT INTO Players (name, runs, avg, sr, team) VALUES (?, ?, ?, ?, ?)", (name, runs, avg, sr, team))
+                cur.execute("INSERT INTO Players (ply_id, name, runs, avg, sr, team) VALUES (?, ?, ?, ?, ?, ?)", (ply_id, name, runs, avg, sr, team))
                 con.commit()
                 msg = "Record successfully added to database"
         except:
@@ -122,6 +131,7 @@ def editrec():
     if request.method == 'POST':
         try:
             rowid = request.form['rowid']
+            ply_id=request.form['ply_id']
             name = request.form['name']
             runs = request.form['runs']
             avg = request.form['avg']
@@ -130,7 +140,7 @@ def editrec():
 
             with sqlite3.connect('database.sqlite') as con:
                 cur = con.cursor()
-                cur.execute("UPDATE Players SET name=?, runs=?, avg=?, sr=?, team=? WHERE rowid=?", (name, runs, avg, sr, team, rowid))
+                cur.execute("UPDATE Players SET ply_id=?, name=?, runs=?, avg=?, sr=?, team=? WHERE rowid=?", (ply_id, name, runs, avg, sr, team, rowid))
                 con.commit()
                 msg = "Record successfully edited in the database"
         except:

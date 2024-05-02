@@ -4,7 +4,10 @@ Add New Player
 {% endblock %}
 {% block content %}
         <form action="{{ url_for('addrec') }}" method="POST">
+
             <h3>Please Add the New Player Information:</h3>
+            Player ID<br>
+            <input type="text" name="ply_id" /><br>            
             Name<br>
             <input type="text" name="name" /><br>
 

@@ -13,7 +13,6 @@ table_exists = cursor.fetchone()
 if not table_exists:
     conn.execute('''
         CREATE TABLE Players (
-            id INTEGER PRIMARY KEY,
             name TEXT,
             runs INTEGER,
             avg REAL,
@@ -23,7 +22,6 @@ if not table_exists:
     print("Created table 'Players' successfully!")
 else:
     print("Table 'Players' already exists.")
-cursor.execute("ALTER TABLE Players ADD COLUMN team TEXT")
 # Similar logic for Teams table
 cursor.execute('''
     SELECT name FROM sqlite_master WHERE type='table' AND name='Teams';
@@ -42,16 +40,5 @@ if not table_exists:
 else:
     print("Table 'Teams' already exists.")
 
-cursor.execute('''
-    SELECT name FROM sqlite_master WHERE type='table' AND name='Tournament';
-''')
-table_exists=cursor.fetchone()
-
-if not table_exists:
-    conn.execute('''
-        CREATE TABLE Tournament
-                 ty_id iINTEGER,
-                 
-''')
-
+cursor.execute("ALTER TABLE Players ADD COLUMN ply_id")
 conn.close()
