@@ -1,5 +1,4 @@
 import sqlite3
-
 conn = sqlite3.connect('database.sqlite')
 print("Connected to database successfully")
 
@@ -29,11 +28,16 @@ cursor.execute('''
 table_exists = cursor.fetchone()
 
 if not table_exists:
+    # Create the Teams table
     conn.execute('''
         CREATE TABLE Teams (
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            team TEXT
+            team_id INTEGER PRIMARY KEY,
+            team_name VARCHAR(255),
+            manager_id INTEGER,
+            manager_name VARCHAR(255),
+            contact_email VARCHAR(255),
+            tournament_id INTEGER,
+            FOREIGN KEY (tournament_id) REFERENCES Tournaments(tournament_id)
         )
     ''')
     print("Created table 'Teams' successfully!")

@@ -4,7 +4,15 @@ Tournaments
 {% endblock %}
 
 {% block content %}
-<a href="{{ url_for('enternew') }}" class="navbar-item">Add New Player</a>
-<a href="{{ url_for('Teams')}}" class="navbar-item">Teams</a>   
-<a href="{{ url_for('list') }}" class="navbar-item">Review and Edit Player</a> 
+<div style="display: flex; justify-content: center; align-items: center; min-height: 50vh; margin: 0; background-color: #e6f7e8;">
+    <a href="{{ url_for('enternew') }}" class="navbar-item" style="display: inline-block; padding: 10px 20px; margin: 10px; border-radius: 5px; background-color: #7d7df2; color: white; text-decoration: none;">Add New Player</a>
+    <a href="{{ url_for('Teams')}}" class="navbar-item" style="display: inline-block; padding: 10px 20px; margin: 10px; border-radius: 5px; background-color: #7d7df2; color: white; text-decoration: none;">Teams</a>   
+    <a href="{{ url_for('list') }}" class="navbar-item" style="display: inline-block; padding: 10px 20px; margin: 10px; border-radius: 5px; background-color: #7d7df2; color: white; text-decoration: none;">Review and Edit Player</a> 
+    <a href="{{ url_for('matches') }}" class="navbar-item" style="display: inline-block; padding: 10px 20px; margin: 10px; border-radius: 5px; background-color: #7d7df2; color: white; text-decoration: none;">View Matches</a>
+    <a href="{{ url_for('crt_match') }}" class="navbar-item" style="display: inline-block; padding: 10px 20px; margin: 10px; border-radius: 5px; background-color: #7d7df2; color: white; text-decoration: none;">Create Matches</a>
+    <a href="{{ url_for('conduct') }}" class="navbar-item" style="display: inline-block; padding: 10px 20px; margin: 10px; border-radius: 5px; background-color: #7d7df2; color: white; text-decoration: none;">BallbyBall</a>    
+    <a href="{{ url_for('score') }}" class="navbar-item" style="display: inline-block; padding: 10px 20px; margin: 10px; border-radius: 5px; background-color: #7d7df2; color: white; text-decoration: none;">Score</a> 
+</div>
+
+
 {% endblock %}

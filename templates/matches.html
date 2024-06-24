@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}
+Tournaments
+{% endblock %}
+
+{% block content %}
+<html>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>Match ID</th>
+                <th>Tournament ID</th>
+                <th>Team 1</th>
+                <th>Team 2</th>
+                <th>Date</th>
+                <th>Venue</th>
+                <th>Result</th>
+                <th>Winning Team</th>
+                <th>Losing Team</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for match in matches %}
+            <tr>
+                <td>{{ match.match_id }}</td>
+                <td>{{ match.tournament_id }}</td>
+                <td>{{ match.team1_id }}</td>
+                <td>{{ match.team2_id }}</td>
+                <td>{{ match.match_date }}</td>
+                <td>{{ match.venue }}</td>
+                <td>{{ match.result }}</td>
+                <td>{{ match.winning_team_id }}</td>
+                <td>{{ match.losing_team_id }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+
+</html>
+{% endblock %}

@@ -8,7 +8,7 @@ Tournaments
         <ul>
             
             {% for tournament in tournament_name %}
-            <h1><a href="{{ url_for('tournament_details', tournament_id=tournament[0]) }}">{{ tournament[1] }}</a></h1>
+            <h1 style="padding: 30px; margin: 10px; background-color: #7d7df2; border-radius: 10px;"><a href="{{ url_for('tournament_details', tournament_id=tournament[0]) }}" style="text-decoration: none; color: inherit; display: block; transition: background-color 0.3s;">{{ tournament[1] }}</a></h1>
             {% endfor %}
         </ul>
         

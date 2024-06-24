@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}
+Tournaments
+{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('crt_match') }}" method="post">
+        <label for="tournament_id">Tournament ID:</label>
+        <input type="text" id="tournament_id" name="tournament_id" required><br><br>
+
+        <label for="team1_id">Team 1 ID:</label>
+        <input type="text" id="team1_id" name="team1_id" required><br><br>
+
+        <label for="team2_id">Team 2 ID:</label>
+        <input type="text" id="team2_id" name="team2_id" required><br><br>
+
+        <label for="match_date">Match Date:</label>
+        <input type="date" id="match_date" name="match_date" required><br><br>
+
+        <label for="venue">Venue:</label>
+        <input type="text" id="venue" name="venue" required><br><br>
+
+        <label for="result">Result:</label>
+        <input type="text" id="result" name="result"><br><br>
+
+        <label for="winning_team_id">Winning Team ID:</label>
+        <input type="text" id="winning_team_id" name="winning_team_id"><br><br>
+
+        <label for="losing_team_id">Losing Team ID:</label>
+        <input type="text" id="losing_team_id" name="losing_team_id"><br><br>
+
+        <input type="submit" value="Create Match">
+    </form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}
+BallbyBall
+{% endblock %}
+
+{% block content %}
+<body>
+    <form action="{{ url_for('submit_ballbyball') }}" method="POST">
+        <label for="match_id">Match ID:</label>
+        <input type="text" id="match_id" name="match_id" required><br><br>
+        
+        <label for="inning">Inning:</label>
+        <input type="text" id="inning" name="inning" required><br><br>
+        
+        <label for="over_number">Over Number:</label>
+        <input type="text" id="over_number" name="over_number" required><br><br>
+        
+        <label for="ball_number">Ball Number:</label>
+        <input type="text" id="ball_number" name="ball_number" required><br><br>
+        
+        <label for="batter_id">Batter ID:</label>
+        <input type="text" id="batter_id" name="batter_id" required><br><br>
+        
+        <label for="bowler_id">Bowler ID:</label>
+        <input type="text" id="bowler_id" name="bowler_id" required><br><br>
+        
+        <label for="runs_scored">Runs Scored:</label>
+        <input type="text" id="runs_scored" name="runs_scored" required><br><br>
+        
+        <label for="extras">Extras:</label>
+        <input type="text" id="extras" name="extras" required><br><br>
+        
+        <label for="wicket_type">Wicket Type:</label>
+        <input type="text" id="wicket_type" name="wicket_type" value="NONE"><br><br>
+        
+        <label for="fielder_id">Fielder ID:</label>
+        <input type="text" id="fielder_id" name="fielder_id"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+{% endblock %}

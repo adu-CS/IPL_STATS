@@ -4,30 +4,31 @@ Tournaments
 {% endblock %}
 
 {% block content %}
+<div style="background-color: #e6f7e8;">
+<form action="{{url_for('newrectnmt') }}" method='POST' style="margin-left: 20px;">
+        <label for="tournament_name" style="display: block; padding-bottom: 5px; font-weight: bold; border-radius: 5px;">Tournament Name:</label><br>
+        <input type="text" id="tournament_name" name="tournament_name" required style="width: 20%; padding: 10px; border: 1px solid black; border-radius: 10px;"><br><br>
+        
+        <label for="tournament_id" style="display: block; padding-bottom: 5px; font-weight: bold; border-radius: 5px;">Tournament ID:</label><br>
+        <input type="number" id="tournament_id" name="tournament_id" required style="width: 20%; padding: 10px; border: 1px solid black; border-radius: 10px;"><br><br>
 
-<form action="{{url_for('newrectnmt') }}" method='POST'>
-        <label for="tournament_name">Tournament Name:</label><br>
-        <input type="text" id="tournament_name" name="tournament_name" required><br><br>
+        <label for="year" style="display: block; padding-bottom: 5px; font-weight: bold; border-radius: 5px;">Year:</label><br>
+        <input type="number" id="year" name="year" required style="width: 20%; padding: 10px; border: 1px solid black; border-radius: 10px;"><br><br>
         
-        <label for="tournament_id">Tournament ID:</label><br>
-        <input type="number" id="tournament_id" name="tournament_id" required><br><br>
+        <label for="location" style="display: block; padding-bottom: 5px; font-weight: bold; border-radius: 5px;">Location:</label><br>
+        <input type="text" id="location" name="location" required style="width: 20%; padding: 10px; border: 1px solid black; border-radius: 10px;"><br><br>
         
-        <label for="year">Year:</label><br>
-        <input type="number" id="year" name="year" required><br><br>
+        <label for="organizer_name" style="display: block; padding-bottom: 5px; font-weight: bold; border-radius: 5px;">Organizer Name:</label><br>
+        <input type="text" id="organizer_name" name="organizer_name" required style="width: 20%; padding: 10px; border: 1px solid black; border-radius: 10px;"><br><br>
         
-        <label for="location">Location:</label><br>
-        <input type="text" id="location" name="location" required><br><br>
+        <label for="organizer_id" style="display: block; padding-bottom: 5px; font-weight: bold; border-radius: 5px;">Organizer ID:</label><br>
+        <input type="number" id="organizer_id" name="organizer_id" required style="width: 20%; padding: 10px; border: 1px solid black; border-radius: 10px;"><br><br>
         
-        <label for="organizer_name">Organizer Name:</label><br>
-        <input type="text" id="organizer_name" name="organizer_name" required><br><br>
+        <label for="contact_email" style="display: block; padding-bottom: 5px; font-weight: bold; border-radius: 5px;">Contact Email:</label><br>
+        <input type="email" id="contact_email" name="contact_email" required style="width: 20%; padding: 10px; border: 1px solid black; border-radius: 10px;"><br><br>
         
-        <label for="organizer_id">Organizer ID:</label><br>
-        <input type="number" id="organizer_id" name="organizer_id" required><br><br>
-        
-        <label for="contact_email">Contact Email:</label><br>
-        <input type="email" id="contact_email" name="contact_email" required><br><br>
-        
-        <input type="submit" value="Submit">
+<input type="submit" value="Submit" style="padding: 10px 20px; margin-top: 5px;margin-bottom: 20px; border: 1px solid black; border-radius: 10px; background-color: #7d7df2; color: white; cursor: pointer;">
 </form>
+</div>
 
 {% endblock %}
