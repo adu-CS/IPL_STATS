@@ -1,7 +1,7 @@
-# League_organizer is an application that allows you to cricket organize tournaments and conduct matches.
+# League_organizer is an application that allows you to organize cricket tournaments and conduct matches.
 
-# Multiple features like cereate torunramnet, add/edit player stats etc.
-# Ball by Ball scorer live scoreboard are some main features
+# Multiple features like create tournament, add/edit player stats etc.
+# Ball by Ball scorer and live scoreboard are some main features
 
 # Developed using Flask(backend), Sqlite3(db), HTML and CSS(frontend)
 
